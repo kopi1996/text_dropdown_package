@@ -1,6 +1,6 @@
 name: text_dropdown_field
 description: "Searchable Text Dropdown Field"
-version: 0.0.1
+version: 1.0.0
 homepage:
 
 environment:

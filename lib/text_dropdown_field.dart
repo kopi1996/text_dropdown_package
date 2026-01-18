@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomSearchableDropdown<T extends Object> extends StatefulWidget {
+class TextDropdownField<T extends Object> extends StatefulWidget {
   final String title;
   final List<T> items;
   final String Function(T)? itemToString;
@@ -12,7 +12,7 @@ class CustomSearchableDropdown<T extends Object> extends StatefulWidget {
   final double? maxHeight;
   final double? minHeight;
 
-  const CustomSearchableDropdown({
+  const TextDropdownField({
     super.key,
     required this.items,
     this.itemToString,
@@ -25,12 +25,12 @@ class CustomSearchableDropdown<T extends Object> extends StatefulWidget {
   });
 
   @override
-  State<CustomSearchableDropdown<T>> createState() =>
-      _CustomSearchableDropdownState<T>();
+  State<TextDropdownField<T>> createState() =>
+      _TextDropdownFieldState<T>();
 }
 
-class _CustomSearchableDropdownState<T extends Object>
-    extends State<CustomSearchableDropdown<T>>
+class _TextDropdownFieldState<T extends Object>
+    extends State<TextDropdownField<T>>
     with WidgetsBindingObserver {
   final GlobalKey<FormFieldState<String>> _fieldKey = GlobalKey();
   bool _openUp = false;
