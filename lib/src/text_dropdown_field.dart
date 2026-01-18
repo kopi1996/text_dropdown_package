@@ -105,13 +105,7 @@ class _TextDropdownFieldState<T extends Object>
               controller: controller,
               focusNode: focusNode,
               style: Theme.of(context).textTheme.bodyMedium,
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(
-                  vertical: 2,
-                  horizontal: 10,
-                ),
-                hintText: widget.hintText,
-              ),
+              decoration: widget.inputDecoration,
             );
           },
           optionsViewBuilder: (context, onSelected, options) {
@@ -119,7 +113,7 @@ class _TextDropdownFieldState<T extends Object>
               elevation: 4,
               borderRadius: BorderRadius.circular(12),
               child: ConstrainedBox(
-                constraints:  BoxConstraints(maxHeight: widget.maxHeight??double.infinity),
+                constraints:  BoxConstraints(maxHeight: widget.maxHeight??double.infinity, minHeight: widget.minHeight??0),
                 child: ListView.builder(
                   shrinkWrap: true,
                   padding: EdgeInsets.zero,
